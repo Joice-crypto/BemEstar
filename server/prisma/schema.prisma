@@ -1,0 +1,62 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Usuario {
+  id              String            @id @default(uuid())
+  createdAt       DateTime
+  nome            String
+  nascimento      DateTime?
+  githubId        Int?              @unique
+  Alimentacao     Alimentacao[]
+  Sono            Sono[]
+  AtividadeFisica AtividadeFisica[]
+  Humor           Humor[]
+}
+
+model Alimentacao {
+  id      String   @id @default(uuid())
+  fotoUrl String
+  nome    String
+  quando  DateTime @default(now())
+
+  usuario   Usuario @relation(fields: [usuarioId], references: [id])
+  usuarioId String
+}
+
+model Sono {
+  id        String   @id @default(uuid())
+  inicio    DateTime @default(now())
+  fim       DateTime @default(now())
+  avaliacao Int
+
+  usuario   Usuario @relation(fields: [usuarioId], references: [id])
+  usuarioId String
+}
+
+model AtividadeFisica {
+  id        String   @id @default(uuid())
+  nome      String
+  quando    DateTime @default(now())
+  descricao String
+
+  usuario   Usuario @relation(fields: [usuarioId], references: [id])
+  usuarioId String
+}
+
+model Humor {
+  id     String   @id @default(uuid())
+  quando DateTime @default(now())
+  humor  Int
+
+  usuario   Usuario @relation(fields: [usuarioId], references: [id])
+  usuarioId String
+}

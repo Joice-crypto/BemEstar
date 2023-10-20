@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "dev": "tsx watch src/server.ts",
-    "lint": "eslint src--ext.ts --fix"
+    "lint": "eslint src--ext.ts --fix",
+    "production": "node src/server.ts",
+    "postinstall": "tsc",
+    "build": " npm install"
+    
   },
   "keywords": [],
   "author": "",
@@ -28,5 +32,8 @@
     "axios": "^1.5.0",
     "fastify": "^4.21.0",
     "zod": "^3.22.2"
+  }, 
+  "engines": {
+    "node": "18.x"
   }
 }

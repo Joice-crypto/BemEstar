@@ -14,7 +14,7 @@ export default async function ViewSono() {
         return <EmptySono></EmptySono>
     }
 
-    const token = cookies().get('token')?.value
+     const token = cookies().has('token')
 
     const response = await api.get('/sono', {
         headers: {

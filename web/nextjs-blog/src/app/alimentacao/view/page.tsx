@@ -1,20 +1,29 @@
 import { EmptyAlimento } from "@/components/EmptyAlimento";
 import { api } from "@/lib/api";
+import { data } from "autoprefixer";
 import dayjs from "dayjs";
 import ptBr from 'dayjs/locale/pt-br'
 import { cookies } from "next/headers";
 
 
 dayjs.locale(ptBr)
-export default async function ViewAlimento() {
 
+export async function getServerSideProps() {
     const isAuth = cookies().has('token')
+    
+    return { props: { data } }
+  }
 
-    if (!isAuth) {
+
+export default async function ViewAlimento(data: String) {
+
+    
+
+    if (!data) {
         return <EmptyAlimento></EmptyAlimento>
     }
 
-    const token = cookies().get('token')?.value
+    const token = data
 
     const response = await api.get('/alimentacao', {
 

@@ -1,18 +1,18 @@
 import { EmptyHumor } from "@/components/EmptyHumor";
 import { api } from "@/lib/api";
 import dayjs from "dayjs";
-import { cookies, headers } from "next/headers";
+import Cookies from "js-cookie"
 import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, PromiseLikeOfReactNode } from "react";
 
 export default async function ViewHumor(){
 
-    const isAuth = cookies().has('token')
+    const isAuth =  Cookies.get('token')
     
     if(!isAuth) {
         return <EmptyHumor></EmptyHumor>
     }
 
-    const token = cookies().get('token')?.value
+    const token = Cookies.get('token')
 
     const response = await api.get('/humor', {
         headers: {

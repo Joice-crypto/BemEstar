@@ -1,5 +1,6 @@
 import { cookies } from "next/headers"
 import jwtDecode from "jwt-decode"
+import { useSearchParams } from "next/navigation"
 
 interface User {
     sub: string
@@ -7,6 +8,7 @@ interface User {
 }
 
 export function getUser():User{
+
     const token = cookies().get('token')?.value
 
     if(!token){

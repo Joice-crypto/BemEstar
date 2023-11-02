@@ -7,20 +7,22 @@ import { cookies } from "next/headers";
 dayjs.locale(ptBr)
 export default async function ViewAlimento() {
 
-    const isAuth = cookies().has('token')
+    const isAuth = cookies().getAll('token')
+
 
     if (!isAuth) {
         return <EmptyAlimento></EmptyAlimento>
     }
+    const cookieStore = cookies()
+   const token =  cookieStore.getAll().map((cookies) => cookies.value)
 
-    const token = cookies().get('token')?.value
 
     const response = await fetch('http://localhost:3333/alimentacao' , {
         headers: {
             Authorization: `Bearer ${token}`
         },
+         cache: 'no-store' 
 
-        cache: 'no-store'
     })
 
     const alimentos = await response.json()
@@ -28,6 +30,7 @@ export default async function ViewAlimento() {
     if (alimentos.length == 0) {
         return <EmptyAlimento></EmptyAlimento>
     }
+
 
     return <div>
        

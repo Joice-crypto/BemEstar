@@ -1,5 +1,4 @@
 import { EmptyAlimento } from "@/components/EmptyAlimento";
-import { api } from "@/lib/api";
 import dayjs from "dayjs";
 import ptBr from 'dayjs/locale/pt-br'
 import { cookies } from "next/headers";
@@ -16,20 +15,22 @@ export default async function ViewAlimento() {
 
     const token = cookies().get('token')?.value
 
-    const response = await api.get('/alimentacao', {
-
+    const response = await fetch('http://localhost:3333/alimentacao' , {
         headers: {
             Authorization: `Bearer ${token}`
-        }
+        },
+
+        cache: 'no-store'
     })
 
-    const alimentos = response.data
+    const alimentos = await response.json()
 
     if (alimentos.length == 0) {
         return <EmptyAlimento></EmptyAlimento>
     }
 
     return <div>
+       
         <p className="text-center text-xl m-6" >Alimentação</p><div className="justify-center grid grid-rows-1 grid-flow-col" > {
             alimentos.map((alimento: { id: any; fotoUrl: string; nome: string; quando: Date; }) => {
                 return (

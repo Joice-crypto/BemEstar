@@ -295,7 +295,7 @@ function detectDomainLocale(domainItems, hostname, detectedLocale) {
     for (const item of domainItems){
         var _item_domain, _item_locales;
         // remove port if present
-        const domainHostname = (_item_domain = item.domain) == null ? void 0 : _item_domain.split(":", 1)[0].toLowerCase();
+        const domainHostname = (_item_domain = item.domain) == null ? void 0 : _item_domain.split(":")[0].toLowerCase();
         if (hostname === domainHostname || detectedLocale === item.defaultLocale.toLowerCase() || ((_item_locales = item.locales) == null ? void 0 : _item_locales.some((locale)=>locale.toLowerCase() === detectedLocale))) {
             return item;
         }
@@ -429,7 +429,7 @@ function formatNextPathnameInfo(info) {
     // hostname.
     let hostname;
     if ((headers == null ? void 0 : headers.host) && !Array.isArray(headers.host)) {
-        hostname = headers.host.toString().split(":", 1)[0];
+        hostname = headers.host.toString().split(":")[0];
     } else if (parsed.hostname) {
         hostname = parsed.hostname;
     } else return;
@@ -1031,28 +1031,14 @@ function stripInternalSearchParams(url, isEdge) {
 /**
  * Strips the `.rsc` extension if it's in the pathname.
  * Since this function is used on full urls it checks `?` for searchParams handling.
- */ function normalizeRscURL(url) {
-    return url.replace(/\.rsc($|\?)/, "$1");
-}
-/**
- * Strips the `/_next/postponed` prefix if it's in the pathname.
- *
- * @param url the url to normalize
- */ function normalizePostponedURL(url) {
-    const parsed = new URL(url);
-    const { pathname } = parsed;
-    if (pathname && pathname.startsWith("/_next/postponed")) {
-        parsed.pathname = pathname.substring("/_next/postponed".length) || "/";
-        return parsed.toString();
-    }
-    return url;
+ */ function normalizeRscPath(pathname, enabled) {
+    return enabled ? pathname.replace(/\.rsc($|\?)/, "$1") : pathname;
 } //# sourceMappingURL=app-paths.js.map
 
 ;// CONCATENATED MODULE: ./node_modules/next/dist/esm/lib/constants.js
 const NEXT_QUERY_PARAM_PREFIX = "nxtP";
 const PRERENDER_REVALIDATE_HEADER = "x-prerender-revalidate";
 const PRERENDER_REVALIDATE_ONLY_GENERATED_HEADER = "x-prerender-revalidate-if-generated";
-const NEXT_DID_POSTPONE_HEADER = "x-nextjs-postponed";
 const NEXT_CACHE_TAGS_HEADER = "x-next-cache-tags";
 const NEXT_CACHE_SOFT_TAGS_HEADER = "x-next-cache-soft-tags";
 const NEXT_CACHE_REVALIDATED_TAGS_HEADER = "x-next-revalidated-tags";
@@ -1076,7 +1062,6 @@ const APP_DIR_ALIAS = "private-next-app-dir";
 const RSC_MOD_REF_PROXY_ALIAS = "private-next-rsc-mod-ref-proxy";
 const RSC_ACTION_VALIDATE_ALIAS = "private-next-rsc-action-validate";
 const RSC_ACTION_PROXY_ALIAS = "private-next-rsc-action-proxy";
-const RSC_ACTION_ENCRYPTION_ALIAS = "private-next-rsc-action-encryption";
 const RSC_ACTION_CLIENT_WRAPPER_ALIAS = "private-next-rsc-action-client-wrapper";
 const PUBLIC_DIR_MIDDLEWARE_CONFLICT = (/* unused pure expression or super */ null && (`You can not have a '_next' folder inside of your public folder. This conflicts with the internal '/_next' route. https://nextjs.org/docs/messages/public-next-folder-conflict`));
 const SSG_GET_INITIAL_PROPS_CONFLICT = (/* unused pure expression or super */ null && (`You can not use getInitialProps with getStaticProps. To use SSG, please remove your getInitialProps`));
@@ -1842,7 +1827,7 @@ async function adapter(params) {
     // TODO-APP: use explicit marker for this
     const isEdgeRendering = typeof self.__BUILD_MANIFEST !== "undefined";
     const prerenderManifest = typeof self.__PRERENDER_MANIFEST === "string" ? JSON.parse(self.__PRERENDER_MANIFEST) : undefined;
-    params.request.url = normalizeRscURL(params.request.url);
+    params.request.url = normalizeRscPath(params.request.url, true);
     const requestUrl = new NextURL(params.request.url, {
         headers: params.request.headers,
         nextConfig: params.request.nextConfig

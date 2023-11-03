@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "build:digitalocean": "npm install --production=false && npm run build && npm ci",
+    "build": "npm install --production=false && npm run build && npm ci",
     "start": "next start -p 80",
     "prod": "next export",
     "lint": "next lint"

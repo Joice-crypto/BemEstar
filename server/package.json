@@ -7,6 +7,7 @@
     "dev": "tsx watch src/server.js",
     "lint": "eslint src--ext.ts --fix",
     "production": "node src/server.js",
+    "build:digitalocean": "npm install --production=false && npm run build && npm ci",
     "start": "npm-run-all clean --parallel watch:build watch:server --print-label",
     "postinstall": "tsc",
     "watch:build": "tsc --watch",
@@ -36,6 +37,7 @@
     "zod": "^3.22.2"
   },
   "engines": {
-    "node": "18.x"
+    "node": "16.x",
+    "npm": "~1.0.20"
   }
 }

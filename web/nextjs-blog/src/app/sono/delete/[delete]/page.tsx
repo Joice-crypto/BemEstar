@@ -14,11 +14,14 @@ export default function DeleteSono(){
     async function DeleteS(event: FormEvent<HTMLFormElement>){
         event.preventDefault()
 
-
-        await api.delete(`/sono/${params.delete}` , {
-            headers : {
+        await fetch(`http://localhost:3333/sono/${params.delete}` , {
+            headers: {
                 Authorization: `Bearer ${token}`
+            },
+            next: {
+                revalidate: 30
             }
+    
         })
 
         alert("Item excluido com sucesso!");

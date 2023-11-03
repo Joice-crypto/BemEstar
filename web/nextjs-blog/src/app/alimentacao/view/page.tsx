@@ -14,14 +14,16 @@ export default async function ViewAlimento() {
         return <EmptyAlimento></EmptyAlimento>
     }
     const cookieStore = cookies()
-   const token =  cookieStore.getAll().map((cookies) => cookies.value)
+    const token =  cookieStore.getAll().map((cookies) => cookies.value)
 
 
     const response = await fetch('http://localhost:3333/alimentacao' , {
         headers: {
             Authorization: `Bearer ${token}`
         },
-         cache: 'no-store' 
+        next: {
+            revalidate: 30
+        }
 
     })
 

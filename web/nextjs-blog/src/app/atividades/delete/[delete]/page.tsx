@@ -15,10 +15,14 @@ export default function DeleteAtividade(){
         event.preventDefault()
 
 
-        await api.delete(`/atividades/${params.delete}` , {
-            headers : {
+        await fetch(`http://localhost:3333/atividades/${params.delete}` , {
+            headers: {
                 Authorization: `Bearer ${token}`
+            },
+            next: {
+                revalidate: 30
             }
+    
         })
 
         alert("Item excluido com sucesso!");

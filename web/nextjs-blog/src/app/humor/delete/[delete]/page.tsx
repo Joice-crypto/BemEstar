@@ -15,12 +15,15 @@ export default function DeleteHumor(){
         event.preventDefault()
 
 
-        await api.delete(`/humor/${params.delete}` , {
-            headers : {
+        await fetch(`http://localhost:3333/humor/${params.delete}` , {
+            headers: {
                 Authorization: `Bearer ${token}`
+            },
+            next: {
+                revalidate: 30
             }
+    
         })
-
         alert("Item excluido com sucesso!");
         router.push('/humor/view')
     }

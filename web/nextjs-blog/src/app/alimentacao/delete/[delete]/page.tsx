@@ -15,10 +15,14 @@ export default function DeleteAlimento(){
 
         const formData = new FormData(event.currentTarget)
 
-        await api.delete(`alimentacao/${params.delete}` , {
+        await fetch(`http://localhost:3333/alimentacao/${params.delete}` , {
             headers: {
                 Authorization: `Bearer ${token}`
             },
+            next: {
+                revalidate: 30
+            }
+    
         })
             
         router.push('/alimentacao/view')

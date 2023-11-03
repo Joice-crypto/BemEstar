@@ -6,21 +6,26 @@ import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, PromiseLik
 
 export default async function ViewHumor(){
 
-    const isAuth = cookies().has('token')
+    const isAuth = cookies().getAll('token')
     
     if(!isAuth) {
         return <EmptyHumor></EmptyHumor>
     }
 
-    const token = cookies().get('token')?.value
+    const cookieStore = cookies()
+    const token =  cookieStore.getAll().map((cookies) => cookies.value)
 
-    const response = await api.get('/humor', {
+    const response = await fetch('http://localhost:3333/humor' , {
         headers: {
             Authorization: `Bearer ${token}`
         },
+        next: {
+            revalidate: 30
+        }
+
     })
 
-    const humores = response.data
+    const humores = await response.json()
 
     if(humores.length == 0) {
         return <EmptyHumor></EmptyHumor>

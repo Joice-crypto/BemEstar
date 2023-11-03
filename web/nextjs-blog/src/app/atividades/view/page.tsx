@@ -1,5 +1,4 @@
 import { EmptyAtividade } from "@/components/EmptyAtividade";
-import { EmptySono } from "@/components/EmptySono";
 import { api } from "@/lib/api";
 import dayjs from "dayjs";
 import ptBr from 'dayjs/locale/pt-br'
@@ -8,21 +7,26 @@ import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, PromiseLik
 
 dayjs.locale(ptBr)
 export default async function ViewAtividades() {
-    const isAuth = cookies().has('token')
+    const isAuth = cookies().getAll('token')
 
     if (!isAuth) {
         return <EmptyAtividade></EmptyAtividade>
     }
 
-    const token = cookies().get('token')?.value
+    const cookieStore = cookies()
+    const token =  cookieStore.getAll().map((cookies) => cookies.value)
 
-    const response = await api.get('/atividades', {
+    const response = await fetch('http://localhost:3333/atividades' , {
         headers: {
             Authorization: `Bearer ${token}`
         },
+        next: {
+            revalidate: 30
+        }
+
     })
 
-    const atividades = response.data
+    const atividades = await response.json()
 
     if (atividades.length == 0) {
         return <EmptyAtividade></EmptyAtividade>

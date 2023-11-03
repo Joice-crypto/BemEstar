@@ -4,14 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx watch src/server.ts",
+    "dev": "tsx watch src/server.js",
     "lint": "eslint src--ext.ts --fix",
-    "production": "node src/server.ts",
+    "production": "node src/server.js",
     "start": "npm-run-all clean --parallel watch:build watch:server --print-label",
     "postinstall": "tsc",
     "watch:build": "tsc --watch",
     "build": " npm install"
-    
   },
   "keywords": [],
   "author": "",
@@ -24,7 +23,7 @@
     "eslint": "^8.47.0",
     "prisma": "^5.2.0",
     "tsx": "^3.12.7",
-    "typescript": "^5.1.6"
+    "typescript": "^5.2.2"
   },
   "dependencies": {
     "@fastify/cors": "^8.3.0",
@@ -34,8 +33,9 @@
     "@prisma/client": "^5.2.0",
     "axios": "^1.5.0",
     "fastify": "^4.21.0",
+    "ts-node": "^10.9.1",
     "zod": "^3.22.2"
-  }, 
+  },
   "engines": {
     "node": "18.x"
   }

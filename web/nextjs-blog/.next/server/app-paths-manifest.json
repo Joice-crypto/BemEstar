@@ -1,7 +1,7 @@
 {
   "/_not-found": "app/_not-found.js",
-  "/alimentacao/delete/[delete]/page": "app/alimentacao/delete/[delete]/page.js",
   "/alimentacao/edit/[edit]/page": "app/alimentacao/edit/[edit]/page.js",
+  "/alimentacao/delete/[delete]/page": "app/alimentacao/delete/[delete]/page.js",
   "/alimentacao/new/page": "app/alimentacao/new/page.js",
   "/alimentacao/view/page": "app/alimentacao/view/page.js",
   "/api/auth/callback/route": "app/api/auth/callback/route.js",
@@ -17,7 +17,7 @@
   "/inicio/page": "app/inicio/page.js",
   "/page": "app/page.js",
   "/sono/delete/[delete]/page": "app/sono/delete/[delete]/page.js",
-  "/sono/edit/[edit]/page": "app/sono/edit/[edit]/page.js",
   "/sono/new/page": "app/sono/new/page.js",
+  "/sono/edit/[edit]/page": "app/sono/edit/[edit]/page.js",
   "/sono/view/page": "app/sono/view/page.js"
 }

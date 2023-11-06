@@ -8,9 +8,6 @@ export async function GET(request: NextRequest){
 
      const registerResponse = await fetch('http://localhost:3333/register' , {
         code,
-        next: {
-            revalidate: 30
-        }
     })
 
     const {token} = registerResponse.data

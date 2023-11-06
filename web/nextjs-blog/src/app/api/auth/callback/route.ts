@@ -6,8 +6,11 @@ export async function GET(request: NextRequest){
     const code = searchParams.get('code')
     const redirectTo = request.cookies.get('redirectTo')?.value
 
-    const registerResponse = await api.post('/register',{
+     const registerResponse = await fetch('http://localhost:3333/register' , {
         code,
+        next: {
+            revalidate: 30
+        }
     })
 
     const {token} = registerResponse.data

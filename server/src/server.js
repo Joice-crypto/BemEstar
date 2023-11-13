@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const fastify_1 = __importDefault(require("fastify"));
+const fastify_1 = require("fastify");
 const cors_1 = __importDefault(require("@fastify/cors"));
 const jwt_1 = __importDefault(require("@fastify/jwt"));
 require("dotenv/config");
@@ -15,7 +15,7 @@ const sono_1 = require("./routes/sono");
 const auth_1 = require("./routes/auth");
 const upload_1 = require("./routes/upload");
 const node_path_1 = require("node:path");
-const app = (0, fastify_1.default)();
+const app = (0, fastify_1.fastify)();
 app.register(multipart_1.default);
 app.register(jwt_1.default, {
     secret: 'ufsj',

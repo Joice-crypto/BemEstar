@@ -1,23 +1,5 @@
 {
-  "/_not-found": "app/_not-found.js",
-  "/alimentacao/delete/[delete]/page": "app/alimentacao/delete/[delete]/page.js",
-  "/alimentacao/new/page": "app/alimentacao/new/page.js",
-  "/alimentacao/edit/[edit]/page": "app/alimentacao/edit/[edit]/page.js",
-  "/alimentacao/view/page": "app/alimentacao/view/page.js",
-  "/api/auth/callback/route": "app/api/auth/callback/route.js",
-  "/atividades/delete/[delete]/page": "app/atividades/delete/[delete]/page.js",
-  "/api/auth/logout/route": "app/api/auth/logout/route.js",
-  "/atividades/edit/[edit]/page": "app/atividades/edit/[edit]/page.js",
-  "/atividades/new/page": "app/atividades/new/page.js",
-  "/atividades/view/page": "app/atividades/view/page.js",
-  "/humor/delete/[delete]/page": "app/humor/delete/[delete]/page.js",
-  "/humor/edit/[edit]/page": "app/humor/edit/[edit]/page.js",
-  "/humor/new/page": "app/humor/new/page.js",
-  "/humor/view/page": "app/humor/view/page.js",
-  "/inicio/page": "app/inicio/page.js",
   "/page": "app/page.js",
-  "/sono/delete/[delete]/page": "app/sono/delete/[delete]/page.js",
-  "/sono/edit/[edit]/page": "app/sono/edit/[edit]/page.js",
-  "/sono/new/page": "app/sono/new/page.js",
-  "/sono/view/page": "app/sono/view/page.js"
+  "/inicio/page": "app/inicio/page.js",
+  "/api/auth/callback/route": "app/api/auth/callback/route.js"
 }

@@ -26,6 +26,9 @@
     "tsx": "^3.12.7",
     "typescript": "^5.2.2"
   },
+  "prisma": {
+    "schema": "prisma/schema.prisma"
+  },
   "dependencies": {
     "@fastify/cors": "^8.3.0",
     "@fastify/jwt": "^7.2.0",

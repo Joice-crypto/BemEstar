@@ -35,5 +35,5 @@ app.register(alimentacao_1.alimentacaoRoutes);
 app.register(humor_1.humorRoutes);
 app.register(atividadeFisicas_1.atividadesFisicasRoutes);
 app.listen({ port: 8080, host: '0.0.0.0' }).then(() => {
-    console.log('Server is runing');
+    console.log('Server is runing!');
 });

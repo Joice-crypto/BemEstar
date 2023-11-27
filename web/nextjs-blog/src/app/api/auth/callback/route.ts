@@ -12,7 +12,7 @@ export async function GET(request: NextRequest){
 
     const {token} = registerResponse.data
 
-    const redirectURL =  redirectTo  ?? new URL('/inicio', request.url)
+    const redirectURL =  redirectTo  ?? new URL('https://clownfish-app-3x9ir.ondigitalocean.app/inicio', request.url)
 
     const cookiesExpiresInSecons = 60 * 60 * 24 * 30 // 30 dias
 

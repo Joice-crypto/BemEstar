@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "tsx watch src/server.js",
     "lint": "eslint src--ext.ts --fix",
+    "generate": "npx prisma generate",
     "production": "node src/server.js",
     "build:digitalocean": "npm install --production=false && npm run build && npm ci",
     "start": "npm-run-all clean --parallel watch:build watch:server --print-label",

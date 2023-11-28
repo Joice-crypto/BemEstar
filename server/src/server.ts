@@ -37,6 +37,6 @@ app.register(alimentacaoRoutes)
 app.register(humorRoutes)
 app.register(atividadesFisicasRoutes)
 
-app.listen({ port: 8080, host: 'clownfish-app-3x9ir.ondigitalocean.app' }).then(() => {
+app.listen({ port: 8080, host: 'https://clownfish-app-3x9ir.ondigitalocean.app/bemestar-server/' }).then(() => {
   console.log('Server is runing!')
 })

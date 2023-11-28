@@ -37,6 +37,6 @@ app.register(alimentacaoRoutes)
 app.register(humorRoutes)
 app.register(atividadesFisicasRoutes)
 
-app.listen({ port: 8080, host: '162.159.140.98' }).then(() => {
+app.listen({ port: 8080, host: 'localhost' }).then(() => {
   console.log('Server is runing!')
 })

@@ -1,1 +1,1 @@
-self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/home/joice/Área de Trabalho/BemEstar/BemEstar/web/nextjs-blog/src/app/layout\":[\"static/media/996798fe8aee0dc3-s.p.woff2\",\"static/media/eb15695615c924c8-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"
+self.__NEXT_FONT_MANIFEST='{"pages":{},"app":{"/home/joice/\xc1rea de Trabalho/BemEstar/BemEstar/web/nextjs-blog/src/app/layout":["static/media/996798fe8aee0dc3-s.p.woff2","static/media/eb15695615c924c8-s.p.woff2"]},"appUsingSizeAdjust":true,"pagesUsingSizeAdjust":false}';

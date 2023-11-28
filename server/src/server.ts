@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { fastify } from 'fastify'
 import cors from '@fastify/cors'
 import jwt from '@fastify/jwt'
@@ -37,6 +36,6 @@ app.register(alimentacaoRoutes)
 app.register(humorRoutes)
 app.register(atividadesFisicasRoutes)
 
-app.listen({ port: 8080, host: 'localhost' }).then(() => {
+app.listen({ port: 8080, host: '0.0.0.0' }).then(() => {
   console.log('Server is runing!')
 })

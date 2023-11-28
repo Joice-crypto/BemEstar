@@ -37,6 +37,6 @@ app.register(humorRoutes)
 app.register(atividadesFisicasRoutes)
 
 // eslint-disable-next-line prettier/prettier
-app.listen({ port: 8080, host:'clownfish-app-3x9ir.ondigitalocean.app/bemestar-server' }).then(() => {
+app.listen({ port: 8080, host:'clownfish-app-3x9ir.ondigitalocean.app' }).then(() => {
   console.log('Server is runing!')
 })

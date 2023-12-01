@@ -1,5 +1,5 @@
 import axios from 'axios'
 
 export const api = axios.create({
-    baseURL:'https://clownfish-app-3x9ir.ondigitalocean.app/bemestar-server/'
+    baseURL:'https://orca-app-wrxy6.ondigitalocean.app/'
 })

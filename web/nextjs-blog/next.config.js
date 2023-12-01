@@ -1,13 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {}
 module.exports = {
-    distDir: 'build',
-    generateBuildId: async () => {
-    if (process.env.BUILD_ID) {
-      return process.env.BUILD_ID;
-    } else {
-      return `${new Date().getTime()}`;
-    }
-  }
+   generateBuildId: async ()=> {
+      if(process.env.BUILD.ID){
+        return process.env.BUILD.ID;
+      }
+      else{
+        return `${new Date().getTime()}`;
+      }
+   }
 }
 module.exports = nextConfig

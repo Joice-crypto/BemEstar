@@ -15,19 +15,26 @@
       "static/css/4f40cc471e83e803.css",
       "static/chunks/app/layout-337d43c5e7ab1f6d.js"
     ],
-    "/alimentacao/delete/[delete]/page": [
+    "/sono/view/page": [
       "static/chunks/webpack-6d5774466c4b8e2a.js",
       "static/chunks/a9ef5bc8-69a9397312171665.js",
       "static/chunks/472-c4f459bcf9b1a4ec.js",
       "static/chunks/main-app-2cdb637bc15f1bdf.js",
-      "static/chunks/app/alimentacao/delete/[delete]/page-090f1455d1509514.js"
+      "static/chunks/app/sono/view/page-d4a79719e8318fc5.js"
     ],
     "/alimentacao/view/page": [
       "static/chunks/webpack-6d5774466c4b8e2a.js",
       "static/chunks/a9ef5bc8-69a9397312171665.js",
       "static/chunks/472-c4f459bcf9b1a4ec.js",
       "static/chunks/main-app-2cdb637bc15f1bdf.js",
-      "static/chunks/app/alimentacao/view/page-393b8b943df052d8.js"
+      "static/chunks/app/alimentacao/view/page-acab161e2f0343aa.js"
+    ],
+    "/alimentacao/delete/[delete]/page": [
+      "static/chunks/webpack-6d5774466c4b8e2a.js",
+      "static/chunks/a9ef5bc8-69a9397312171665.js",
+      "static/chunks/472-c4f459bcf9b1a4ec.js",
+      "static/chunks/main-app-2cdb637bc15f1bdf.js",
+      "static/chunks/app/alimentacao/delete/[delete]/page-090f1455d1509514.js"
     ],
     "/atividades/delete/[delete]/page": [
       "static/chunks/webpack-6d5774466c4b8e2a.js",
@@ -41,7 +48,7 @@
       "static/chunks/a9ef5bc8-69a9397312171665.js",
       "static/chunks/472-c4f459bcf9b1a4ec.js",
       "static/chunks/main-app-2cdb637bc15f1bdf.js",
-      "static/chunks/app/atividades/view/page-28a5b2ff4a4b4acb.js"
+      "static/chunks/app/atividades/view/page-1b8486b9becb847c.js"
     ],
     "/humor/delete/[delete]/page": [
       "static/chunks/webpack-6d5774466c4b8e2a.js",
@@ -55,14 +62,7 @@
       "static/chunks/a9ef5bc8-69a9397312171665.js",
       "static/chunks/472-c4f459bcf9b1a4ec.js",
       "static/chunks/main-app-2cdb637bc15f1bdf.js",
-      "static/chunks/app/humor/view/page-937341e59c4ff0c0.js"
-    ],
-    "/sono/view/page": [
-      "static/chunks/webpack-6d5774466c4b8e2a.js",
-      "static/chunks/a9ef5bc8-69a9397312171665.js",
-      "static/chunks/472-c4f459bcf9b1a4ec.js",
-      "static/chunks/main-app-2cdb637bc15f1bdf.js",
-      "static/chunks/app/sono/view/page-d4a79719e8318fc5.js"
+      "static/chunks/app/humor/view/page-92e3774b69cca6c9.js"
     ],
     "/sono/delete/[delete]/page": [
       "static/chunks/webpack-6d5774466c4b8e2a.js",
@@ -103,14 +103,6 @@
       "static/chunks/71-06dd87b2769fa0cf.js",
       "static/chunks/app/atividades/new/page-6abf4132b0ab021c.js"
     ],
-    "/humor/new/page": [
-      "static/chunks/webpack-6d5774466c4b8e2a.js",
-      "static/chunks/a9ef5bc8-69a9397312171665.js",
-      "static/chunks/472-c4f459bcf9b1a4ec.js",
-      "static/chunks/main-app-2cdb637bc15f1bdf.js",
-      "static/chunks/71-06dd87b2769fa0cf.js",
-      "static/chunks/app/humor/new/page-f2eadb3a05396ff2.js"
-    ],
     "/humor/edit/[edit]/page": [
       "static/chunks/webpack-6d5774466c4b8e2a.js",
       "static/chunks/a9ef5bc8-69a9397312171665.js",
@@ -118,6 +110,14 @@
       "static/chunks/main-app-2cdb637bc15f1bdf.js",
       "static/chunks/71-06dd87b2769fa0cf.js",
       "static/chunks/app/humor/edit/[edit]/page-4cec170fa2588ce9.js"
+    ],
+    "/humor/new/page": [
+      "static/chunks/webpack-6d5774466c4b8e2a.js",
+      "static/chunks/a9ef5bc8-69a9397312171665.js",
+      "static/chunks/472-c4f459bcf9b1a4ec.js",
+      "static/chunks/main-app-2cdb637bc15f1bdf.js",
+      "static/chunks/71-06dd87b2769fa0cf.js",
+      "static/chunks/app/humor/new/page-f2eadb3a05396ff2.js"
     ],
     "/inicio/page": [
       "static/chunks/webpack-6d5774466c4b8e2a.js",
@@ -132,7 +132,7 @@
       "static/chunks/a9ef5bc8-69a9397312171665.js",
       "static/chunks/472-c4f459bcf9b1a4ec.js",
       "static/chunks/main-app-2cdb637bc15f1bdf.js",
-      "static/chunks/app/page-19b534be340c0cf2.js"
+      "static/chunks/app/page-bd80ec05d64d5634.js"
     ],
     "/sono/edit/[edit]/page": [
       "static/chunks/webpack-6d5774466c4b8e2a.js",

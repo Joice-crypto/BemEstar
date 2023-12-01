@@ -36,6 +36,7 @@ app.register(alimentacaoRoutes)
 app.register(humorRoutes)
 app.register(atividadesFisicasRoutes)
 
-app.listen({ port: 8080, host: '0.0.0.0' }).then(() => {
+// eslint-disable-next-line prettier/prettier
+app.listen({ port: 8080, host:'0.0.0.0' }).then(() => {
   console.log('Server is runing!')
 })
